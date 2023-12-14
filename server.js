@@ -16,6 +16,14 @@ app.get("/greeting/:name", (req, res)=>{
     res.send(`What's up, ${req.params.name}, how's your day?`)
 })
 
+// Tip calculator route
+app.get("/tip/:total/:tipPercentage", (req, res)=>{
+    let total = req.params.total;
+    let percentage = req.params.tipPercentage
+    let tip = (total*percentage)/100
+    res.send(`The servers tip should be ${tip}`)
+})
+
 
 //------------------------- [Routes]
 
